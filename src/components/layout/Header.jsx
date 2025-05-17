@@ -17,7 +17,6 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
-      <div className="h-[50px] w-screen"></div>
     </>
   );
 };
