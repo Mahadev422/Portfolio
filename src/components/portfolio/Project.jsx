@@ -67,7 +67,7 @@ const Project = () => {
                   >
                     <div className="h-48">
                       <img
-                        src='project.png'
+                        src='Portfolio/project.png'
                         alt={project.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
@@ -122,4 +122,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Project;
