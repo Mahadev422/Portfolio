@@ -7,15 +7,15 @@ const Footer = () => {
   const [rating, setRating] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the feedback to your backend
-    console.log({ feedback, rating });
+    console.log(feedback, rating);
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
     setFeedback('');
     setRating(null);
+    setTimeout(() => setSubmitted(false), 3000);
   };
+
 
   return (
     <footer className="bg-gray-900 text-gray-300 pt-12 pb-8 px-4 sm:px-6 lg:px-8">
@@ -93,16 +93,22 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
             <div className="flex gap-4 mb-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/Mahadev422/Portfolio.git"
+              target='_blank'
+              className="text-gray-400 hover:text-white transition-colors">
                 <FiGithub className="text-xl" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <FiTwitter className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/mahadevkumar"
+              target='_blank'
+              className="text-gray-400 hover:text-white transition-colors">
                 <FiLinkedin className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:youremail@example.com"
+              target='_blank' 
+              className="text-gray-400 hover:text-white transition-colors">
                 <FiMail className="text-xl" />
               </a>
             </div>
@@ -114,7 +120,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="pt-6 border-t border-gray-800 text-sm text-gray-500 text-center">
-          © {new Date().getFullYear()} DevResources. All rights reserved.
+          © {new Date().getFullYear()} Mahadev. All rights reserved.
         </div>
       </div>
     </footer>

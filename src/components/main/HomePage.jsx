@@ -1,15 +1,20 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const words = ['Frontend Developer', 'React.js Expert', 'JavaScript Ninja', 'UI/UX Enthusiast'];
+  const words = [
+    "Frontend Developer",
+    "Backend Developer",
+    "React.js Expert",
+    "Full-Stack Developer",
+  ];
   const typingSpeed = 150;
-  const deletingSpeed = 100;
+  const deletingSpeed = 50;
   const delayBetweenWords = 1500;
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const HomePage = () => {
 
       if (!isDeleting && currentText === currentWord) {
         setTimeout(() => setIsDeleting(true), delayBetweenWords);
-      } else if (isDeleting && currentText === '') {
+      } else if (isDeleting && currentText === "") {
         setIsDeleting(false);
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
@@ -39,7 +44,7 @@ const HomePage = () => {
   }, [currentText, currentWordIndex, isDeleting]);
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
+    <div className="relative min-h-screen text-white w-full">
       {/* 🔥 Background Video */}
       <video
         autoPlay
@@ -52,26 +57,18 @@ const HomePage = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* 🔲 Overlay (optional for readability) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-0" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black/8 z-0" />
 
       {/* 🎯 Hero Section */}
-      <section className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
+      <section className="relative p-10 z-10 flex flex-col items-center justify-center h-screen text-center px-4">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+          className="text-4xl backdrop-blur sm:text-5xl md:text-6xl font-bold mb-6"
         >
           Hi, I'm a <br />
-          <span className="text-cyan-400 relative">
-            _{currentText}
-            <motion.span
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ repeat: Infinity, duration: 1 }}
-              className="absolute -right-2 w-1 h-10 bg-cyan-400"
-            />
-          </span>
+          <span className="text-cyan-400 relative">_{currentText}</span>
         </motion.h1>
 
         <motion.p
@@ -80,14 +77,15 @@ const HomePage = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="text-xl text-gray-200 max-w-xl mx-auto mb-8"
         >
-          Welcome to my portfolio. I build beautiful and performant web experiences using modern tools like React, Tailwind CSS, and Node.js.
+          Welcome to my portfolio. I build beautiful and performant web
+          experiences using modern tools like React, Tailwind CSS, and Node.js.
         </motion.p>
 
         {/* 🔘 Call-to-Action Buttons */}
         <div className="flex gap-4 mb-6">
           <a
             href="https://mahadev422.github.io/resume/"
-            target='_blank'
+            target="_blank"
             className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-medium transition"
           >
             Download Resume
@@ -102,10 +100,18 @@ const HomePage = () => {
 
         {/* 🌐 Social Media Icons */}
         <div className="flex space-x-6 mt-4 text-2xl text-cyan-300">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/Mahadev422/Portfolio.git"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedin />
           </a>
           <a href="mailto:youremail@example.com">

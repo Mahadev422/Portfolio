@@ -18,7 +18,6 @@ const App = () => {
         {/* Skills Section */}
         <Skill />
         <hr />
-
         {/* Projects Section */}
         <Project />
       </main>

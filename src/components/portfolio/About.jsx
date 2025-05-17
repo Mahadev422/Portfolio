@@ -25,7 +25,7 @@ const About = () => {
               <div className="p-1 rounded-full">
                 <div className="bg-gray-800 p-1 rounded-full">
                   <img
-                    src="/Portfolio/profile.png"
+                    src="/Portfolio/profile.jpg"
                     alt="Profile"
                     className="rounded-full w-full aspect-square object-cover"
                   />
