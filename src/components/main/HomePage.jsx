@@ -69,20 +69,6 @@ const HomePage = () => {
               Accelerate your development workflow with our curated collection of 
               components, templates, and best practices.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <button className="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium">
-                Get Started
-              </button>
-              <button className="px-8 py-3 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium border border-gray-200">
-                Explore Components
-              </button>
-            </motion.div>
           </div>
         </div>
 
