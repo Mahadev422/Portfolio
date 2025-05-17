@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiCode, FiZap, FiLayers, FiTrendingUp } from 'react-icons/fi';
-import Video from './Video';
 
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
