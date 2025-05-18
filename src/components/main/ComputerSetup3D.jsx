@@ -26,6 +26,11 @@ const Desk = () => {
 
 const Monitor = () => {
   // Using a real image URL from Unsplash
+  const ref = useRef()
+  useFrame((state, delta) => {
+    ref.current.rotation.y = Math.PI;
+  });
+
   const screenTexture = useLoader(
     TextureLoader, '/Portfolio/image.png'
   );
@@ -38,7 +43,7 @@ const Monitor = () => {
       </mesh>
 
       {/* Screen surface with image texture */}
-      <mesh position={[0, 0.6, 0.095]}>
+      <mesh position={[0, 0.6, 0.095]} ref={ref} >
         <planeGeometry args={[1.75, 0.99]} />
         <meshStandardMaterial 
           map={screenTexture}
@@ -245,7 +250,7 @@ const Scene = () => {
       />
       <Environment preset="city" />
       
-      <group ref={groupRef} enableZoom={false}>
+      <group ref={groupRef}>
         <Desk />
         <Monitor />
         <Keyboard />
@@ -270,7 +275,7 @@ const Scene = () => {
       </group>
       
       <OrbitControls 
-        enableZoom={true}
+        enableZoom={false}
         enablePan={true}
         minPolarAngle={Math.PI / 6}
         maxPolarAngle={Math.PI / 2}

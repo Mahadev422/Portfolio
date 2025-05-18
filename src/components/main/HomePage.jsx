@@ -44,10 +44,7 @@ const HomePage = () => {
   }, [currentText, currentWordIndex, isDeleting]);
 
   return (
-    <div className="relative min-h-screen w-full">
-
-      {/* 🎯 Hero Section */}
-      <section className="relative p-10 z-10 flex flex-col items-center justify-center h-screen text-center px-4">
+      <section className="relative p-4 z-10 flex flex-col">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,18 +52,19 @@ const HomePage = () => {
           className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
         >
           Hi, I'm a <br />
-          <span className="text-cyan-400 relative">_{currentText}</span>
+          <span className="text-cyan-400">_{currentText}</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-xl text-white mb-8"
-        >
-          Welcome to my portfolio. I build beautiful and performant web
-          experiences using modern tools like React, Tailwind CSS, and Node.js.
-        </motion.p>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.3, duration: 0.6 }}
+  className="text-xl bg-black/50 rounded-xl p-4 text-white mb-8"
+>
+  Welcome to my portfolio. I build beautiful and performant web
+  experiences using modern tools like React, Tailwind CSS, and Node.js.
+</motion.p>
+
 
         {/* 🔘 Call-to-Action Buttons */}
         <div className="flex gap-4 mb-6">
@@ -75,38 +73,16 @@ const HomePage = () => {
             target="_blank"
             className="bg-blue-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-medium transition"
           >
-            Download Resume
+            View Resume
           </a>
-          <a
-            href="#contact"
-            className="border border-cyan-500 hover:bg-cyan-500 hover:text-white text-cyan-400 px-6 py-3 rounded-full font-medium transition"
-          >
-            Contact Me
-          </a>
-        </div>
-
-        {/* 🌐 Social Media Icons */}
-        <div className="flex space-x-6 mt-4 text-2xl text-cyan-300">
           <a
             href="https://github.com/Mahadev422/Portfolio.git"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="border border-cyan-500 hover:bg-cyan-500 hover:text-white text-cyan-400 px-6 py-3 rounded-full font-medium transition"
           >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <a href="mailto:youremail@example.com">
-            <FaEnvelope />
+            Github Code
           </a>
         </div>
       </section>
-    </div>
   );
 };
 

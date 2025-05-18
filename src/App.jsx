@@ -13,6 +13,7 @@ const App = () => {
       <main className="pb-10">
         {/* Hero section */}
         <HeroSection />
+        <hr />
         {/* About Section */}
         <About />
         <hr />
