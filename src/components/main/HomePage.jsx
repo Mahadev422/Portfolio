@@ -44,20 +44,7 @@ const HomePage = () => {
   }, [currentText, currentWordIndex, isDeleting]);
 
   return (
-    <div className="relative min-h-screen text-white w-full">
-      {/* 🔥 Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-      >
-        <source src="/Portfolio/land_vid.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div className="absolute top-0 left-0 w-full h-full bg-black/8 z-0" />
+    <div className="relative min-h-screen w-full">
 
       {/* 🎯 Hero Section */}
       <section className="relative p-10 z-10 flex flex-col items-center justify-center h-screen text-center px-4">
@@ -65,7 +52,7 @@ const HomePage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl backdrop-blur sm:text-5xl md:text-6xl font-bold mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
         >
           Hi, I'm a <br />
           <span className="text-cyan-400 relative">_{currentText}</span>
@@ -75,7 +62,7 @@ const HomePage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-xl text-gray-200 max-w-xl mx-auto mb-8"
+          className="text-xl text-white mb-8"
         >
           Welcome to my portfolio. I build beautiful and performant web
           experiences using modern tools like React, Tailwind CSS, and Node.js.
@@ -86,7 +73,7 @@ const HomePage = () => {
           <a
             href="https://mahadev422.github.io/resume/"
             target="_blank"
-            className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-medium transition"
+            className="bg-blue-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-medium transition"
           >
             Download Resume
           </a>

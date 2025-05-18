@@ -3,7 +3,8 @@ import Skill from './components/portfolio/Skill';
 import Project from './components/portfolio/Project';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header'
-import HomePage from './components/main/HomePage';
+import HeroSection from './components/HeroSection';
+
 const App = () => {
 
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <Header />
       <main className="pb-10">
         {/* Hero section */}
-        <HomePage />
+        <HeroSection />
         {/* About Section */}
         <About />
         <hr />

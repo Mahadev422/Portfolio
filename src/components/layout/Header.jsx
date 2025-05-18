@@ -12,7 +12,7 @@ const Header = () => {
         <div className="backdrop-blur-md bg-white/30 border-b-1">
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
             <span className="text-xl font-bold text-gray-800">
-              Developer Api
+              Mahadev Portfolio
             </span>
           </div>
         </div>
