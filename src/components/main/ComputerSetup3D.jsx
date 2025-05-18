@@ -1,5 +1,5 @@
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import { OrbitControls, Environment, Html } from '@react-three/drei';
 
 // Computer setup components with improved details
@@ -15,8 +15,6 @@ import Cpu from './computer/Cpu';
 // Main scene component
 const Scene = () => {
   const groupRef = useRef();
-  const [monitorOn, setMonitorOn] = useState(true);
-  const [mouseActive, setMouseActive] = useState(false);
   const { camera } = useThree();
   
   // Add subtle animation
@@ -42,23 +40,10 @@ const Scene = () => {
         <Monitor />
         <Keyboard />
         <Mouse />
-        <Chair />
+        <Suspense>
+          <Chair modelPath="/Portfolio/models/chair.gltf" position={[0, -2, -2.2]} />
+        </Suspense>
         <Cpu />
-        
-        {/* Interactive elements */}
-        <mesh 
-          position={[0, 0.6, 0.2]}
-        >
-          <boxGeometry args={[0.2, 0.05, 0.05]} />
-          <meshStandardMaterial color={monitorOn ? "#00ff00" : "#ff0000"} visible={false} />
-        </mesh>
-        
-        <mesh 
-          position={[0.3, -0.4, 0.6]}
-        >
-          <sphereGeometry args={[0.12, 16, 8]} />
-          <meshStandardMaterial color="#ff0000" visible={false} />
-        </mesh>
       </group>
       
       <OrbitControls 
