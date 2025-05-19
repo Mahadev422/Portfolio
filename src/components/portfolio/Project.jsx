@@ -9,7 +9,7 @@ const Project = () => {
     description:
       "Full-featured online store with product catalog, cart, and payment integration.",
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "https://via.placeholder.com/600x400?text=E-commerce",
+    image: "/Portfolio/project.png",
     demoUrl: "#",
     codeUrl: "#",
   },
@@ -18,18 +18,18 @@ const Project = () => {
     description:
       "Collaborative project management tool with real-time updates and team features.",
     tech: ["React", "Firebase", "Material UI", "Redux"],
-    image: "https://via.placeholder.com/600x400?text=Task+App",
+    image: "/Portfolio/project.png",
     demoUrl: "#",
     codeUrl: "#",
   },
   {
-    title: "Health & Fitness Tracker",
+    title: "3D Computer Setup",
     description:
-      "Mobile app for tracking workouts, nutrition, and health metrics with data visualization.",
-    tech: ["React Native", "GraphQL", "D3.js", "AWS"],
-    image: "https://via.placeholder.com/600x400?text=Fitness+App",
-    demoUrl: "#",
-    codeUrl: "#",
+      "3D computer setup with keyboard, mouse, cpu, monitor, chair and table.",
+    tech: ["React.js", "React-three", "Drei", "Fiber", "Tailwindcss"],
+    image: "/Portfolio/project/computer-set.png",
+    demoUrl: "https://mahadev422.github.io/computer-set/",
+    codeUrl: "https://github.com/Mahadev422/computer-set.git",
   },
 ];
 
@@ -67,7 +67,7 @@ const Project = () => {
                   >
                     <div className="h-48">
                       <img
-                        src='/Portfolio/project.png'
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />

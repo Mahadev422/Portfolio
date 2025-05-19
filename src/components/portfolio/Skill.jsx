@@ -3,17 +3,19 @@ import { FiCode, FiLayers, FiSmartphone, FiDatabase } from "react-icons/fi";
 import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3 } from "react-icons/fa";
 import { SiMongodb, SiRedux } from "react-icons/si";
 import { DiJavascript1 } from "react-icons/di";
+import { TbBrandThreejs } from "react-icons/tb";
 
 const Skill = () => {
   const technicalSkills = [
-    { name: "React", percentage: 95, icon: <FaReact /> },
-    { name: "JavaScript", percentage: 95, icon: <DiJavascript1 /> },
-    { name: "Node.js", percentage: 85, icon: <FaNodeJs /> },
     { name: "HTML", percentage: 90, icon: <FaHtml5 /> },
     { name: "CSS", percentage: 90, icon: <FaCss3 /> },
-    { name: "MongoDB", percentage: 80, icon: <SiMongodb /> },
+    { name: "JavaScript", percentage: 95, icon: <DiJavascript1 /> },
+    { name: "React.js", percentage: 95, icon: <FaReact /> },
     { name: "Redux", percentage: 85, icon: <SiRedux /> },
+    { name: "Node.js", percentage: 85, icon: <FaNodeJs /> },
+    { name: "MongoDB", percentage: 80, icon: <SiMongodb /> },
     { name: "Git", percentage: 90, icon: <FaGitAlt /> },
+    { name: "Three.js", percentage: 75, icon: <TbBrandThreejs />}
   ];
   const skills = [
     {
@@ -76,7 +78,7 @@ const Skill = () => {
             ))}
           </div>
 
-          <div className="mt-16">
+          <div className="my-10">
             <h3 className="text-2xl font-semibold mb-8 text-center">
               Technical Proficiencies
             </h3>
