@@ -2,7 +2,7 @@ import HomePage from "./main/HomePage";
 import ComputerSetup3D from './main/ComputerSetup3D';
 function HeroSection() {
   return (
-     <div className="min-h-screen">
+     <div className="min-h-screen m-4">
   <div className="absolute inset-0 w-full">
     <ComputerSetup3D />
     {/* Optional dark overlay */}

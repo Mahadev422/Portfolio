@@ -1,7 +1,7 @@
 
 const EmbeddedSite = () => {
   return (
-    <div className="h-[100%] scale-[1.2]">
+    <div className="h-[100%] w-screen">
       <iframe
         src="https://mahadev422.github.io/computer-set/"
         title="External Website"
