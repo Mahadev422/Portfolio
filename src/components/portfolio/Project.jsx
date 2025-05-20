@@ -9,7 +9,7 @@ const Project = () => {
     description:
       "Full-featured online store with product catalog, cart, and payment integration.",
     tech: ["React", "Node.js", "MongoDB", "Tailwindcss", "Framer-motion", "React-icons"],
-    image: "/Portfolio/project.png",
+    image: "/Portfolio/project/e-commerce.png",
     demoUrl: "https://mahadev422.github.io/e-commerce/",
     codeUrl: "https://github.com/Mahadev422/e-commerce.git",
   },
