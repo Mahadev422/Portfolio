@@ -10,7 +10,7 @@ const Project = () => {
       "Full-featured online store with product catalog, cart, and payment integration.",
     tech: ["React", "Node.js", "MongoDB", "Tailwindcss", "Framer-motion", "React-icons"],
     image: "/Portfolio/project/e-commerce.png",
-    demoUrl: "https://mahadev422.github.io/e-commerce/",
+    demoUrl: "https://shop-ease-git-main-mahadevs-projects-3f2fff3d.vercel.app",
     codeUrl: "https://github.com/Mahadev422/e-commerce.git",
   },
   {
