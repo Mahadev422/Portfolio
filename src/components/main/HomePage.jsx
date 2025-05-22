@@ -68,7 +68,7 @@ const HomePage = () => {
       {/* 🔘 Call-to-Action Buttons */}
       <div className="flex gap-4 mb-6">
         <a
-          href="https://mahadev422.github.io/resume/"
+          href="https://mahadev422.github.io/new-resume/"
           target="_blank"
           className="bg-blue-500 hover:bg-cyan-600 px-6 py-3 rounded-full font-medium transition"
         >
