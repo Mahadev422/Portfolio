@@ -15,6 +15,7 @@ const About = () => {
           </h2>
 
           <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Profile Image */}
             <motion.div
               className="w-full md:w-1/3"
               initial={{ x: -50, opacity: 0 }}
@@ -33,6 +34,7 @@ const About = () => {
               </div>
             </motion.div>
 
+            {/* Details */}
             <motion.div
               className="w-full md:w-2/3"
               initial={{ x: 50, opacity: 0 }}
@@ -42,19 +44,13 @@ const About = () => {
             >
               <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
               <p className="mb-6">
-                I'm a passionate full-stack developer with expertise in building
-                scalable web applications. My journey began with a Computer
-                Science degree and has evolved through working with startups and
-                Fortune 500 companies alike.
+                I'm a passionate full-stack developer with expertise in building scalable web applications. My journey began with a Civil Engineering degree from <strong>IIT(ISM), Dhanbad</strong> and has evolved through working with startups.
               </p>
               <p className="mb-6">
-                I believe in writing clean, maintainable code and staying at the
-                forefront of web technologies. When I'm not coding, you can find
-                me contributing to open-source projects or mentoring junior
-                developers.
+                I believe in writing clean, maintainable code and staying at the forefront of web technologies.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 bg-gray-50 p-2 rounded">
+              <div className="grid grid-cols-2 gap-4 bg-gray-50 p-2 rounded mb-6">
                 <div>
                   <h4 className="font-medium text-gray-400">Name:</h4>
                   <p>Mahadev Kumar</p>
@@ -72,6 +68,30 @@ const About = () => {
                   <p>IIT(ISM) Dhanbad, Jharkhand</p>
                 </div>
               </div>
+
+              {/* Timeline Education Section */}
+              <div className="bg-gray-50 p-4 rounded shadow-sm">
+                <h4 className="text-lg font-semibold mb-4 text-gray-700">🎓 Education</h4>
+                <div className="border-l-2 border-cyan-400 pl-4 space-y-6">
+                  <motion.div
+                    initial={{ x: -20, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <div className="relative">
+                      <div className="absolute -left-5 top-1 w-3 h-3 bg-cyan-400 rounded-full"></div>
+                      <p className="font-medium">IIT(ISM), Dhanbad</p>
+                      <p className="text-sm text-gray-600">B.Tech in Civil Engineering</p>
+                      <p className="text-sm text-gray-500">2024 – 2028</p>
+                    </div>
+                  </motion.div>
+
+                  {/* More entries can be added here */}
+                  {/* <motion.div>...</motion.div> */}
+                </div>
+              </div>
+
             </motion.div>
           </div>
         </motion.div>

@@ -4,6 +4,7 @@ import Project from './components/portfolio/Project';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header'
 import HeroSection from './components/HeroSection';
+import Certificate from './components/portfolio/Certificate';
 
 const App = () => {
 
@@ -17,6 +18,8 @@ const App = () => {
         {/* About Section */}
         <About />
         <hr />
+        {/* Certificate section */}
+        <Certificate />
         {/* Skills Section */}
         <Skill />
         <hr />

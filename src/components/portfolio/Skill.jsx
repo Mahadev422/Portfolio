@@ -36,12 +36,6 @@ const Skill = () => {
       description:
         "Skilled in building cross-platform web applications using React vite with vite module integration.",
     },
-    {
-      title: "DevOps & Cloud",
-      icon: <FiCode />,
-      description:
-        "Proficient in CI/CD pipelines, containerization with Docker, and cloud platforms like AWS and Azure.",
-    },
   ];
 
   return (

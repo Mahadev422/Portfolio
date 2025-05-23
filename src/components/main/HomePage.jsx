@@ -62,7 +62,7 @@ const HomePage = () => {
         className="text-xl bg-black/50 rounded-xl p-4 mb-8"
       >
         Welcome to my portfolio. I build beautiful and performant web
-        experiences using modern tools like React, Tailwind CSS, and Node.js.
+        experiences using modern tools like React, Tailwind CSS, Framer-motion, Three and Node.js.
       </motion.p>
 
       {/* 🔘 Call-to-Action Buttons */}
