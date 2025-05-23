@@ -9,10 +9,28 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(feedback, rating);
-    setSubmitted(true);
-    setFeedback('');
-    setRating(null);
+    console.log(rating, feedback)
+  try {
+    const response = await fetch('https://node-authentication-d8r6.onrender.com/auth/feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ rating, feedback }),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      setSubmitted(result);
+      setFeedback('');
+      setRating(null);
+    } else {
+      console.log('Error submitting feedback:', result);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -32,7 +50,7 @@ const Footer = () => {
           
           {submitted ? (
             <div className="p-4 bg-green-900/30 text-green-400 rounded-md">
-              Thank you for your feedback! We appreciate your input.
+              {submitted}
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
