@@ -20,6 +20,7 @@ const App = () => {
         <hr />
         {/* Certificate section */}
         <Certificate />
+        <hr />
         {/* Skills Section */}
         <Skill />
         <hr />
