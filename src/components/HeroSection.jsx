@@ -9,7 +9,7 @@ function HeroSection() {
       </div>
 
       {/* Homepage content */}
-      <div className="relative bg-black opacity-50 text-white  rounded-2xl w-[70%] pt-20 z-10 flex items-center justify-center px-4">
+      <div className="relative bg-black dark:opacity-100 dark:bg-transparent opacity-50 text-white  rounded-2xl w-[70%] pt-20 z-10 flex items-center justify-center px-4">
         <HomePage />
       </div>
     </div>

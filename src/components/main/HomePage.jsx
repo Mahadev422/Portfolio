@@ -49,9 +49,9 @@ const HomePage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
       >
-        Hi, I'm a <br />
+        Hii, I'm a <br />
         <span className="text-cyan-400">_{currentText}</span>
       </motion.h1>
 
@@ -59,7 +59,7 @@ const HomePage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="text-xl dark:bg-transparent bg-black/50 rounded-xl p-4 mb-8"
+        className="text-xl rounded-xl p-4 mb-8"
       >
         Welcome to my portfolio. I build beautiful and performant web
         experiences using modern tools like React, Tailwind CSS, Framer-motion, Three and Node.js.
