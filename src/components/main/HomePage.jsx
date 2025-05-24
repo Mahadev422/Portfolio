@@ -64,23 +64,6 @@ const HomePage = () => {
         Welcome to my portfolio. I build beautiful and performant web
         experiences using modern tools like React, Tailwind CSS, Framer-motion, Three and Node.js.
       </motion.p>
-
-      {/* 🔘 Call-to-Action Buttons */}
-      <div className="flex gap-4 mb-6">
-        <a
-          href="https://mahadev422.github.io/new-resume/"
-          target="_blank"
-          className="bg-blue-500 hover:bg-cyan-600 px-6 py-3 rounded-full font-medium transition"
-        >
-          View Resume
-        </a>
-        <a
-          href="https://github.com/Mahadev422/Portfolio.git"
-          className="border border-cyan-500 hover:bg-cyan-500 hover:text-white text-cyan-400 px-6 py-3 rounded-full font-medium transition"
-        >
-          Github Code
-        </a>
-      </div>
     </section>
   );
 };

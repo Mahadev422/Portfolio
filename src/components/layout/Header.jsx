@@ -33,7 +33,7 @@ const Header = () => {
 
           <button
             onClick={() => setIsDark(!isDark)}
-            className="text-xl text-gray-800 dark:text-yellow-300 transition hover:scale-[1.2] px-3"
+            className="text-xl text-gray-800 dark:text-yellow-300 transition hover:scale-[1.2] px-5"
             aria-label="Toggle Dark Mode"
           >
             {isDark ? <FaSun /> : <FaMoon />}

@@ -14,16 +14,12 @@ const App = () => {
       <main className="pt-20">
         {/* Hero section */}
         <HeroSection />
-        <hr />
         {/* About Section */}
         <About />
-        <hr />
         {/* Certificate section */}
         <Certificate />
-        <hr />
         {/* Skills Section */}
         <Skill />
-        <hr />
         {/* Projects Section */}
         <Project />
       </main>
