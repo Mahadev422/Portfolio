@@ -1,12 +1,52 @@
-# React + Vite
+# 💼 Mahadev Kumar's Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website — a showcase of my journey, skills, projects, and passion for full-stack web development. Built with modern web technologies to reflect my commitment to quality, design, and performance.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React.js, Tailwind CSS, Framer Motion
+- **3D Rendering:** Three.js with React Three Fiber & Drei
+- **Animations:** Framer Motion, GSAP (where needed)
+- **Deployment:** Vercel / Netlify (choose the one you used)
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## ✨ Features
+
+- 🎨 Responsive, animated layout using Tailwind CSS and Framer Motion
+- 🖥️ Interactive 3D computer setup using React Three Fiber
+- 📜 About, Skills, Education, Certificates, and Projects sections
+- 🌙 Dark theme-friendly visuals
+- 🖱️ Hover and scroll interactions
+- 📱 Mobile and tablet optimized
+
+## 🧠 What I Learned
+
+- Advanced 3D modeling and scene control in React
+- Smooth animation management using Framer Motion
+- Responsive design with Tailwind utilities
+- Component-driven development and performance optimization
+
+## 🔗 Live Preview
+
+[👉 View Portfolio Live](https://your-deployment-link.vercel.app)
+
+## 🖼️ Screenshots
+
+| 3D Section | About Section |
+|-----------|----------------|
+| ![3D](./public/images/3d.png) | ![About](./public/images/about.png) |
+
+## 🛠️ Setup Instructions
+
+```bash
+# Clone this repo
+git clone https://github.com/your-username/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
