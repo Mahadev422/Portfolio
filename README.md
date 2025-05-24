@@ -30,13 +30,12 @@ Welcome to my personal portfolio website — a showcase of my journey, skills, p
 
 ## 🔗 Live Preview
 
-[👉 View Portfolio Live](https://your-deployment-link.vercel.app)
+[👉 View Portfolio Live](https://mahadev422.github.io/Portfolio/)
 
 ## 🖼️ Screenshots
 
-| 3D Section | About Section |
-|-----------|----------------|
-| ![3D](./public/images/3d.png) | ![About](./public/images/about.png) |
+| 3D Section |
+| ![3D](./public/project/computer-set.png) |
 
 ## 🛠️ Setup Instructions
 
