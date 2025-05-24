@@ -50,7 +50,7 @@ const About = () => {
                 I believe in writing clean, maintainable code and staying at the forefront of web technologies.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 bg-gray-50 p-2 rounded mb-6">
+              <div className="grid grid-cols-2 gap-4 bg-gray-50 dark:bg-gray-800 p-2 rounded mb-6">
                 <div>
                   <h4 className="font-medium text-gray-400">Name:</h4>
                   <p>Mahadev Kumar</p>
@@ -70,8 +70,8 @@ const About = () => {
               </div>
 
               {/* Timeline Education Section */}
-              <div className="bg-gray-50 p-4 rounded shadow-sm">
-                <h4 className="text-lg font-semibold mb-4 text-gray-700">🎓 Education</h4>
+              <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded shadow-sm">
+                <h4 className="text-lg font-semibold mb-4">🎓 Education</h4>
                 <div className="border-l-2 border-cyan-400 pl-4 space-y-6">
                   <motion.div
                     initial={{ x: -20, opacity: 0 }}

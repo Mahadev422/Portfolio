@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSend, FiThumbsUp, FiThumbsDown, FiGithub, FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiSend, FiThumbsUp, FiThumbsDown, FiGithub, FiInstagram , FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const [feedback, setFeedback] = useState('');
@@ -36,7 +36,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-12 pb-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 dark:bg-black text-gray-300 border-t pt-12 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Feedback Section */}
         <motion.div 
@@ -113,20 +113,20 @@ const Footer = () => {
             <div className="flex gap-4 mb-4">
               <a href="https://github.com/Mahadev422/Portfolio.git"
               target='_blank'
-              className="text-gray-400 hover:text-white transition-colors">
+              className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all">
                 <FiGithub className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <FiTwitter className="text-xl" />
+              <a href="https://www.instagram.com/rajmahadev422/" className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all" target='_blank'>
+                <FiInstagram  className="text-xl" />
               </a>
-              <a href="https://linkedin.com/in/mahadevkumar"
+              <a href="https://www.linkedin.com/in/mahadev-kumar-15b2ba320"
               target='_blank'
-              className="text-gray-400 hover:text-white transition-colors">
+              className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all">
                 <FiLinkedin className="text-xl" />
               </a>
               <a href="mailto:youremail@example.com"
               target='_blank' 
-              className="text-gray-400 hover:text-white transition-colors">
+              className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all">
                 <FiMail className="text-xl" />
               </a>
             </div>

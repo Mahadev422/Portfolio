@@ -9,9 +9,9 @@ import Certificate from './components/portfolio/Certificate';
 const App = () => {
 
   return (
-    <div className="min-h-screen font-sans">
+    <div className="min-h-screen font-sans dark:bg-black bg-white dark:text-white">
       <Header />
-      <main className="pb-10">
+      <main className="pt-20">
         {/* Hero section */}
         <HeroSection />
         <hr />

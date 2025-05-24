@@ -59,7 +59,7 @@ const HomePage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="text-xl bg-black/50 rounded-xl p-4 mb-8"
+        className="text-xl dark:bg-transparent bg-black/50 rounded-xl p-4 mb-8"
       >
         Welcome to my portfolio. I build beautiful and performant web
         experiences using modern tools like React, Tailwind CSS, Framer-motion, Three and Node.js.

@@ -4,7 +4,6 @@ const EmbeddedSite = () => {
     <div className="h-[100%] w-screen">
       <iframe
         src="https://mahadev422.github.io/computer-set/"
-        title="External Website"
         width="100%"
         height="100%"
       />

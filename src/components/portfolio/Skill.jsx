@@ -59,7 +59,7 @@ const Skill = () => {
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.title}
-                className="rounded-xl bg-green-100 p-6 border border-gray-700 hover:border-cyan-400/30 transition-all"
+                className="rounded-xl dark:bg-gray-800 hover:drop-shadow-md dark:hover:drop-shadow-gray-700 bg-green-100 p-6 transition-shadow"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}

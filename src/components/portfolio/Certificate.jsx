@@ -38,9 +38,9 @@ const Certificate = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="border-gray-700 hover:border-cyan-400/30 transition-all border rounded-xl p-4 flex items-center justify-between shadow-sm"
+              className="dark:bg-gray-800 transition-all dark:hover:shadow-blue-950 hover:shadow-md rounded-xl p-4 flex items-center justify-between shadow-sm"
             >
-              <h3 className="text-lg font-medium text-gray-800">
+              <h3 className="text-lg font-medium">
                 {cert.title}
               </h3>
               <button
