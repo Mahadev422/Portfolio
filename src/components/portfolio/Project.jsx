@@ -20,13 +20,13 @@ const Project = () => {
       codeUrl: "https://github.com/Mahadev422/e-commerce.git",
     },
     {
-      title: "Task Management App",
+      title: "Stone Paper Scissor",
       description:
-        "Collaborative project management tool with real-time updates and team features.",
-      tech: ["React", "Firebase", "Material UI", "Redux"],
-      image: "/Portfolio/project.png",
-      demoUrl: "#",
-      codeUrl: "#",
+        "Simple stone paper scissor game.",
+      tech: ["Html", "Css", "Javascript"],
+      image: "/Portfolio/project/Stone-paper-scissor.png",
+      demoUrl: "https://mahadev422.github.io/stone-paper-scissor/",
+      codeUrl: "https://github.com/Mahadev422/stone-paper-scissor.git",
     },
     {
       title: "3D Computer Setup",
@@ -92,7 +92,7 @@ const Project = () => {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: "spring", stiffness: "500" }}
                         key={t}
-                        className="text-xs bg-green-300 px-2 py-1 rounded"
+                        className="text-xs dark:bg-gray-700 bg-green-300 px-2 py-1 rounded"
                       >
                         {t}
                       </motion.span>
