@@ -93,7 +93,7 @@ const Certificate = () => {
                     ✕
                   </button>
                 </div>
-                <div className="relative">
+                <div className="relative border p-1">
                   <img
                     src={selectedCert.image}
                     alt={selectedCert.title}
