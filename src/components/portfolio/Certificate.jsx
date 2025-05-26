@@ -17,6 +17,10 @@ const Certificate = () => {
       title: "Javascript",
       image: "/Portfolio/certificates/js-cert.png",
     },
+    {
+      title: "React",
+      image: "/Portfolio/certificates/react-cert.png",
+    },
   ];
 
   return (
@@ -72,13 +76,13 @@ const Certificate = () => {
               />
 
               <motion.div
-                className="relative bg-white rounded-lg p-4 max-w-3xl w-[90%] max-h-[90vh] overflow-auto"
+                className="relative bg-white dark:bg-gray-800 rounded-lg p-4 max-w-3xl w-[90%] max-h-[90vh] overflow-auto"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="flex justify-between items-center mb-4 sticky top-0 bg-white py-2 z-10">
+                <div className="flex justify-between items-center mb-4 sticky top-0 py-2 z-10">
                   <h3 className="text-xl font-semibold">
                     {selectedCert.title}
                   </h3>
