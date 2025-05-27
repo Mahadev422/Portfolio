@@ -3,25 +3,38 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Certificate = () => {
   const [selectedCert, setSelectedCert] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const certificates = [
     {
       title: "Html",
-      image: "/Portfolio/certificates/html-cert.png",
+      images: ["/Portfolio/certificates/html-cert.png"],
     },
     {
       title: "Css",
-      image: "/Portfolio/certificates/css-cert.png",
+      images: ["/Portfolio/certificates/css-cert.png"],
     },
     {
       title: "Javascript",
-      image: "/Portfolio/certificates/js-cert.png",
+      images: ["/Portfolio/certificates/js-cert-hr.png", "/Portfolio/certificates/js-cert.png"],
     },
     {
       title: "React",
-      image: "/Portfolio/certificates/react-cert.png",
+      images: ["/Portfolio/certificates/react-cert.png"],
     },
   ];
+
+  const handleView = (cert) => {
+    setSelectedCert(cert);
+    setSelectedIndex(0); // Reset index on opening
+  };
+
+  const handleNext = () => {
+    if (!selectedCert) return;
+    setSelectedIndex((prevIndex) =>
+      prevIndex === selectedCert.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <section className="py-10 px-6">
@@ -44,11 +57,9 @@ const Certificate = () => {
               transition={{ delay: index * 0.1 }}
               className="dark:bg-gray-800 transition-all dark:hover:shadow-blue-950 hover:shadow-md rounded-xl p-4 flex items-center justify-between shadow-sm"
             >
-              <h3 className="text-lg font-medium">
-                {cert.title}
-              </h3>
+              <h3 className="text-lg font-medium">{cert.title}</h3>
               <button
-                onClick={() => setSelectedCert(cert)}
+                onClick={() => handleView(cert)}
                 className="bg-cyan-500 text-white text-sm px-4 py-1.5 rounded hover:bg-cyan-600 transition-colors"
               >
                 View Certificate
@@ -67,9 +78,9 @@ const Certificate = () => {
               exit={{ opacity: 0 }}
               onClick={() => setSelectedCert(null)}
             >
-              {/* Dark overlay */}
+              {/* Overlay */}
               <motion.div
-                className="absolute inset-0 bg-black/70 bg-opacity-70"
+                className="absolute inset-0 bg-black/70"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -84,7 +95,7 @@ const Certificate = () => {
               >
                 <div className="flex justify-between items-center mb-4 sticky top-0 py-2 z-10">
                   <h3 className="text-xl font-semibold">
-                    {selectedCert.title}
+                    {selectedCert.title} ({selectedIndex + 1}/{selectedCert.images.length})
                   </h3>
                   <button
                     onClick={() => setSelectedCert(null)}
@@ -95,11 +106,22 @@ const Certificate = () => {
                 </div>
                 <div className="relative border p-1">
                   <img
-                    src={selectedCert.image}
-                    alt={selectedCert.title}
+                    src={selectedCert.images[selectedIndex]}
+                    alt={`${selectedCert.title} ${selectedIndex + 1}`}
                     className="w-full h-auto rounded"
                   />
                 </div>
+
+                {selectedCert.images.length > 1 && (
+                  <div className="text-right mt-4">
+                    <button
+                      onClick={handleNext}
+                      className="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 transition"
+                    >
+                      Next
+                    </button>
+                  </div>
+                )}
               </motion.div>
             </motion.div>
           )}
