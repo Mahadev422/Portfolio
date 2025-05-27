@@ -16,11 +16,15 @@ const Certificate = () => {
     },
     {
       title: "Javascript",
-      images: ["/Portfolio/certificates/js-cert-hr.png", "/Portfolio/certificates/js-cert.png"],
+      images: ["/Portfolio/certificates/js-cert-hr2.png","/Portfolio/certificates/js-cert-hr1.png", "/Portfolio/certificates/js-cert.png"],
     },
     {
       title: "React",
-      images: ["/Portfolio/certificates/react-cert.png"],
+      images: ["/Portfolio/certificates/react-cert-hr.png"],
+    },
+    {
+      title: "Node",
+      images: ["/Portfolio/certificates/node-cert-hr.png"],
     },
   ];
 

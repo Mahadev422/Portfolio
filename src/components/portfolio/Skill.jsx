@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiCode, FiLayers, FiSmartphone, FiDatabase } from "react-icons/fi";
-import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3 } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3, FaServer } from "react-icons/fa";
 import { SiMongodb, SiRedux } from "react-icons/si";
 import { DiJavascript1 } from "react-icons/di";
 import { TbBrandThreejs } from "react-icons/tb";
@@ -25,16 +25,16 @@ const Skill = () => {
         "Expertise in building responsive, accessible, and performant user interfaces with React, Next.js, and modern CSS.",
     },
     {
-      title: "Backend Development",
+      title: "Database",
       icon: <FiDatabase />,
       description:
-        "Experience designing and implementing RESTful APIs, GraphQL services, and serverless architectures with Node.js.",
+        "Expert in using Monogdb with mongoose for making REST API's and performing CRUD operation.",
     },
     {
       title: "Full-Stack Development",
-      icon: <FiSmartphone />,
+      icon: <FaServer />,
       description:
-        "Skilled in building cross-platform web applications using React vite with vite module integration.",
+        "Experience designing and implementing RESTful APIs, and serverless architectures with Node.js.",
     },
   ];
 
