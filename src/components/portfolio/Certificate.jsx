@@ -26,6 +26,10 @@ const Certificate = () => {
       title: "Node",
       images: ["/Portfolio/certificates/node-cert-hr.png"],
     },
+    {
+      title: "Rest API",
+      images: ["/Portfolio/certificates/rest-api-cert-hr.png"],
+    },
   ];
 
   const handleView = (cert) => {
