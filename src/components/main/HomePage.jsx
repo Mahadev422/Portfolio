@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);

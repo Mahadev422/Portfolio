@@ -1,20 +1,31 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  FiSend,
-  FiThumbsUp,
-  FiThumbsDown,
-  FiGithub,
-  FiInstagram,
-  FiLinkedin,
-  FiMail,
-} from 'react-icons/fi';
+  Send,
+  ThumbsUp,
+  ThumbsDown,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  ArrowRight,
+  Heart,
+  Code,
+  Star,
+  Users,
+  Coffee,
+  ExternalLink,
+  CheckCircle,
+  Sparkles
+} from 'lucide-react';
 
 const Footer = () => {
   const [feedback, setFeedback] = useState('');
   const [rating, setRating] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,140 +58,330 @@ const Footer = () => {
     setTimeout(() => setSubmitted(false), 3000);
   };
 
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    setSubscribed(true);
+    setEmail('');
+    setTimeout(() => setSubscribed(false), 3000);
+  };
+
+  const stats = [
+    { icon: Code, label: 'Projects Built', value: '50+' },
+    { icon: Users, label: 'Happy Clients', value: '100+' },
+    { icon: Coffee, label: 'Cups of Coffee', value: '1000+' },
+    { icon: Star, label: 'GitHub Stars', value: '500+' },
+  ];
+
+  const quickLinks = [
+    { label: 'About', href: '#about' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  const services = [
+    { label: 'Web Development', href: '#' },
+    { label: 'UI/UX Design', href: '#' },
+    { label: 'Mobile Apps', href: '#' },
+    { label: 'Consulting', href: '#' },
+  ];
+
   return (
-    <footer className="bg-gray-900 dark:bg-black text-gray-300 border-t pt-12 pb-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_rgba(56,189,248,0.1)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(168,85,247,0.1)_0%,_transparent_50%)]" />
+      
+      <div className="relative z-10">
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="border-b border-gray-800/50 py-12 px-4 sm:px-6 lg:px-8"
+        >
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center group"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl mb-4 group-hover:from-cyan-500/30 group-hover:to-purple-500/30 transition-all duration-300"
+                  >
+                    <stat.icon className="w-8 h-8 text-cyan-400" />
+                  </motion.div>
+                  <h4 className="text-2xl font-bold text-white mb-1">{stat.value}</h4>
+                  <p className="text-sm text-gray-400">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         {/* Feedback Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 p-6 bg-gray-800 rounded-lg"
+          className="py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-800/50"
         >
-          <h3 className="text-xl font-semibold text-white mb-4">
-            We'd love your feedback!
-          </h3>
-
-          {submitted ? (
-            <div className="p-4 bg-green-900/30 text-green-400 rounded-md">
-              {submitted}
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <p className="text-sm mb-2">How would you rate your experience?</p>
-                <div className="flex gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setRating('positive')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                      rating === 'positive'
-                        ? 'bg-green-900/50 text-green-400'
-                        : 'bg-gray-700 hover:bg-gray-600'
-                    }`}
-                  >
-                    <FiThumbsUp /> Positive
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setRating('negative')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-500 ${
-                      rating === 'negative'
-                        ? 'bg-red-900/50 text-red-400'
-                        : 'bg-gray-700 hover:bg-gray-600'
-                    }`}
-                  >
-                    <FiThumbsDown /> Needs Improvement
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="feedback" className="block text-sm mb-2">
-                  What can we improve?
-                </label>
-                <textarea
-                  id="feedback"
-                  rows="3"
-                  value={feedback}
-                  onChange={(e) => setFeedback(e.target.value)}
-                  className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="Your suggestions..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={!feedback || !rating || isLoading}
-                className={`flex items-center justify-center gap-2 px-6 py-2 rounded-lg transition-colors ${
-                  !feedback || !rating || isLoading
-                    ? 'bg-gray-700 cursor-not-allowed'
-                    : 'bg-indigo-600 hover:bg-indigo-700'
-                }`}
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-full px-6 py-2 mb-6"
               >
-                {isLoading ? (
-                  <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
-                ) : (
-                  <FiSend />
-                )}
-                {isLoading ? 'Sending...' : 'Send Feedback'}
-              </button>
-            </form>
-          )}
+                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span className="text-cyan-400 text-sm font-medium">Your Opinion Matters</span>
+              </motion.div>
+              
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Help Me <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Improve</span>
+              </h3>
+              <p className="text-gray-400 text-lg">
+                Your feedback drives continuous improvement and helps create better experiences
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
+              {submitted ? (
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="text-center py-8"
+                >
+                  <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold text-green-400 mb-2">Thank You!</h4>
+                  <p className="text-gray-300">{submitted}</p>
+                </motion.div>
+              ) : (
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-white font-medium mb-4">How would you rate your experience?</p>
+                    <div className="flex gap-4 justify-center">
+                      <motion.button
+                        type="button"
+                        onClick={() => setRating('positive')}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                          rating === 'positive'
+                            ? 'bg-green-500/20 text-green-400 border-2 border-green-500/50'
+                            : 'bg-gray-700/50 hover:bg-gray-600/50 border-2 border-transparent'
+                        }`}
+                      >
+                        <ThumbsUp className="w-5 h-5" />
+                        <span className="font-medium">Love It!</span>
+                      </motion.button>
+                      <motion.button
+                        type="button"
+                        onClick={() => setRating('negative')}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-red-500 ${
+                          rating === 'negative'
+                            ? 'bg-red-500/20 text-red-400 border-2 border-red-500/50'
+                            : 'bg-gray-700/50 hover:bg-gray-600/50 border-2 border-transparent'
+                        }`}
+                      >
+                        <ThumbsDown className="w-5 h-5" />
+                        <span className="font-medium">Needs Work</span>
+                      </motion.button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="feedback" className="block text-white font-medium mb-2">
+                      What can I improve? (Optional)
+                    </label>
+                    <textarea
+                      id="feedback"
+                      rows="4"
+                      value={feedback}
+                      onChange={(e) => setFeedback(e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 resize-none"
+                      placeholder="Share your thoughts, suggestions, or ideas..."
+                    />
+                  </div>
+
+                  <motion.button
+                    onClick={handleSubmit}
+                    disabled={!rating || isLoading}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all ${
+                      !rating || isLoading
+                        ? 'bg-gray-700/50 cursor-not-allowed text-gray-400'
+                        : 'bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white shadow-lg'
+                    }`}
+                  >
+                    {isLoading ? (
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <Send className="w-5 h-5" />
+                    )}
+                    {isLoading ? 'Sending...' : 'Send Feedback'}
+                  </motion.button>
+                </div>
+              )}
+            </div>
+          </div>
         </motion.div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">DevResources</h4>
-            <p className="text-sm">
-              The ultimate collection of tools and components for modern web
-              development.
-            </p>
-          </div>
+        <div className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+              {/* Brand Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-2"
+              >
+                <h4 className="text-2xl font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+                  Mahadev Kumar
+                </h4>
+                <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
+                  Passionate full-stack developer crafting digital experiences that matter. 
+                  Specializing in modern web technologies and innovative solutions.
+                </p>
+                
+                {/* Newsletter Signup */}
+                <div className="mb-6">
+                  <h5 className="text-white font-semibold mb-3">Stay Updated</h5>
+                  {subscribed ? (
+                    <div className="flex items-center gap-2 text-green-400">
+                      <CheckCircle className="w-5 h-5" />
+                      <span>Thanks for subscribing!</span>
+                    </div>
+                  ) : (
+                    <div className="flex gap-2">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        className="flex-1 px-4 py-2 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all"
+                        required
+                      />
+                      <motion.button
+                        onClick={handleNewsletterSubmit}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white px-4 py-2 rounded-lg transition-all"
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </motion.button>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
 
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
-            <div className="flex gap-4 mb-4">
-              <a
-                href="https://github.com/Mahadev422/Portfolio.git"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all focus:outline-none focus:ring-2 focus:ring-white rounded-full"
+              {/* Quick Links */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <FiGithub className="text-xl" />
-              </a>
-              <a
-                href="https://www.instagram.com/rajmahadev422/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all focus:outline-none focus:ring-2 focus:ring-white rounded-full"
+                <h5 className="text-white font-semibold mb-4">Quick Links</h5>
+                <ul className="space-y-3">
+                  {quickLinks.map((link) => (
+                    <li key={link.label}>
+                      <motion.a
+                        href={link.href}
+                        whileHover={{ x: 5 }}
+                        className="text-gray-400 hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                      >
+                        <span>{link.label}</span>
+                        <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </motion.a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Services */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <FiInstagram className="text-xl" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mahadev-kumar-15b2ba320"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all focus:outline-none focus:ring-2 focus:ring-white rounded-full"
-              >
-                <FiLinkedin className="text-xl" />
-              </a>
-              <a
-                href="mailto:youremail@example.com"
-                className="text-gray-400 hover:text-white hover:scale-[1.2] transition-all focus:outline-none focus:ring-2 focus:ring-white rounded-full"
-              >
-                <FiMail className="text-xl" />
-              </a>
+                <h5 className="text-white font-semibold mb-4">Services</h5>
+                <ul className="space-y-3">
+                  {services.map((service) => (
+                    <li key={service.label}>
+                      <motion.a
+                        href={service.href}
+                        whileHover={{ x: 5 }}
+                        className="text-gray-400 hover:text-purple-400 transition-colors inline-flex items-center gap-2 group"
+                      >
+                        <span>{service.label}</span>
+                        <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </motion.a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
-            <p className="text-sm">Subscribe to our newsletter for updates</p>
-          </div>
-        </div>
 
-        {/* Copyright */}
-        <div className="pt-6 border-t border-gray-800 text-sm text-gray-500 text-center">
-          © {new Date().getFullYear()} Mahadev. All rights reserved.
+            {/* Social Links & Copyright */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="pt-8 border-t border-gray-800/50"
+            >
+              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="flex items-center gap-6">
+                  <span className="text-gray-400">Connect with me:</span>
+                  <div className="flex gap-4">
+                    {[
+                      { icon: Github, href: 'https://github.com/Mahadev422/Portfolio.git', label: 'GitHub' },
+                      { icon: Instagram, href: 'https://www.instagram.com/rajmahadev422/', label: 'Instagram' },
+                      { icon: Linkedin, href: 'https://www.linkedin.com/in/mahadev-kumar-15b2ba320', label: 'LinkedIn' },
+                      { icon: Mail, href: 'mailto:youremail@example.com', label: 'Email' },
+                    ].map((social) => (
+                      <motion.a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2, y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-purple-500/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        aria-label={social.label}
+                      >
+                        <social.icon className="w-5 h-5" />
+                      </motion.a>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-2 text-gray-500 text-sm">
+                  <span>© {new Date().getFullYear()} Made with</span>
+                  <Heart className="w-4 h-4 text-red-400 fill-current" />
+                  <span>by Mahadev Kumar</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </footer>
