@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import {
   Send,
   ThumbsUp,
   ThumbsDown,
-  Github,
-  Instagram,
-  Linkedin,
   Mail,
   ArrowRight,
   Heart,
@@ -66,10 +64,10 @@ const Footer = () => {
   };
 
   const stats = [
-    { icon: Code, label: 'Projects Built', value: '50+' },
-    { icon: Users, label: 'Happy Clients', value: '100+' },
-    { icon: Coffee, label: 'Cups of Coffee', value: '1000+' },
-    { icon: Star, label: 'GitHub Stars', value: '500+' },
+    { icon: Code, label: 'Projects Built', value: '3' },
+    { icon: Users, label: 'Happy Clients', value: '5' },
+    { icon: Coffee, label: 'Cups of Coffee', value: '10' },
+    { icon: Star, label: 'GitHub Stars', value: '5' },
   ];
 
   const quickLinks = [
@@ -353,9 +351,9 @@ const Footer = () => {
                   <span className="text-gray-400">Connect with me:</span>
                   <div className="flex gap-4">
                     {[
-                      { icon: Github, href: 'https://github.com/Mahadev422/Portfolio.git', label: 'GitHub' },
-                      { icon: Instagram, href: 'https://www.instagram.com/rajmahadev422/', label: 'Instagram' },
-                      { icon: Linkedin, href: 'https://www.linkedin.com/in/mahadev-kumar-15b2ba320', label: 'LinkedIn' },
+                      { icon: FiGithub, href: 'https://github.com/Mahadev422/Portfolio.git', label: 'GitHub' },
+                      { icon: FiInstagram, href: 'https://www.instagram.com/rajmahadev422/', label: 'Instagram' },
+                      { icon: FiLinkedin, href: 'https://www.linkedin.com/in/mahadev-kumar-15b2ba320', label: 'LinkedIn' },
                       { icon: Mail, href: 'mailto:youremail@example.com', label: 'Email' },
                     ].map((social) => (
                       <motion.a

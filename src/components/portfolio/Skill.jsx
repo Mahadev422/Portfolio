@@ -1,120 +1,133 @@
 import { useState } from "react";
-import { 
-  Code, Database, Server, Layers, Globe, 
-  Palette, Zap, Star
+import {
+  Code,
+  Database,
+  Server,
+  Layers,
+  Globe,
+  Palette,
+  Zap,
+  Star,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState("all");
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   const skillCategories = [
-    { id: 'all', label: 'All Skills', icon: Star },
-    { id: 'frontend', label: 'Frontend', icon: Palette },
-    { id: 'backend', label: 'Backend', icon: Server },
-    { id: 'tools', label: 'Tools', icon: Zap }
+    { id: "all", label: "All Skills", icon: Star },
+    { id: "frontend", label: "Frontend", icon: Palette },
+    { id: "backend", label: "Backend", icon: Server },
+    { id: "tools", label: "Tools", icon: Zap },
   ];
 
   const technicalSkills = [
-    { 
-      name: "HTML5", 
-      level: 90, 
-      category: 'frontend',
+    {
+      name: "HTML5",
+      level: 90,
+      category: "frontend",
       color: "from-orange-500 to-red-500",
-      description: "Semantic markup, accessibility, modern HTML5 features"
+      description: "Semantic markup, accessibility, modern HTML5 features",
     },
-    { 
-      name: "CSS3", 
-      level: 90, 
-      category: 'frontend',
+    {
+      name: "CSS3",
+      level: 90,
+      category: "frontend",
       color: "from-blue-500 to-indigo-500",
-      description: "Advanced CSS, Flexbox, Grid, animations, responsive design"
+      description: "Advanced CSS, Flexbox, Grid, animations, responsive design",
     },
-    { 
-      name: "JavaScript", 
-      level: 95, 
-      category: 'frontend',
+    {
+      name: "JavaScript",
+      level: 95,
+      category: "frontend",
       color: "from-yellow-500 to-orange-500",
-      description: "ES6+, DOM manipulation, async programming, modern JS"
+      description: "ES6+, DOM manipulation, async programming, modern JS",
     },
-    { 
-      name: "React.js", 
-      level: 95, 
-      category: 'frontend',
+    {
+      name: "React.js",
+      level: 95,
+      category: "frontend",
       color: "from-cyan-500 to-blue-500",
-      description: "Hooks, Context, component architecture, performance optimization"
+      description:
+        "Hooks, Context, component architecture, performance optimization",
     },
-    { 
-      name: "Redux", 
-      level: 85, 
-      category: 'frontend',
+    {
+      name: "Redux",
+      level: 85,
+      category: "frontend",
       color: "from-purple-500 to-pink-500",
-      description: "State management, middleware, Redux Toolkit"
+      description: "State management, middleware, Redux Toolkit",
     },
-    { 
-      name: "Node.js", 
-      level: 85, 
-      category: 'backend',
+    {
+      name: "Node.js",
+      level: 85,
+      category: "backend",
       color: "from-green-500 to-emerald-500",
-      description: "Server-side JavaScript, Express.js, API development"
+      description: "Server-side JavaScript, Express.js, API development",
     },
-    { 
-      name: "MongoDB", 
-      level: 80, 
-      category: 'backend',
+    {
+      name: "MongoDB",
+      level: 80,
+      category: "backend",
       color: "from-green-600 to-teal-500",
-      description: "NoSQL database, Mongoose ODM, aggregation pipelines"
+      description: "NoSQL database, Mongoose ODM, aggregation pipelines",
     },
-    { 
-      name: "Git", 
-      level: 90, 
-      category: 'tools',
+    {
+      name: "Git",
+      level: 90,
+      category: "tools",
       color: "from-gray-600 to-gray-800",
-      description: "Version control, branching strategies, collaboration"
+      description: "Version control, branching strategies, collaboration",
     },
-    { 
-      name: "Three.js", 
-      level: 75, 
-      category: 'frontend',
+    {
+      name: "Three.js",
+      level: 75,
+      category: "frontend",
       color: "from-indigo-600 to-purple-600",
-      description: "3D graphics, WebGL, interactive visualizations"
-    }
+      description: "3D graphics, WebGL, interactive visualizations",
+    },
   ];
 
   const coreCompetencies = [
     {
       title: "Frontend Development",
       icon: Layers,
-      description: "Building responsive, accessible, and performant user interfaces with modern frameworks and best practices.",
+      description:
+        "Building responsive, accessible, and performant user interfaces with modern frameworks and best practices.",
       skills: ["React", "JavaScript", "CSS3", "HTML5", "Responsive Design"],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Backend Development", 
+      title: "Backend Development",
       icon: Server,
-      description: "Designing and implementing scalable server-side applications, RESTful APIs, and database architectures.",
+      description:
+        "Designing and implementing scalable server-side applications, RESTful APIs, and database architectures.",
       skills: ["Node.js", "Express.js", "REST APIs", "Database Design"],
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
     },
     {
       title: "Database Management",
       icon: Database,
-      description: "Expert in MongoDB with Mongoose for creating robust APIs and performing efficient CRUD operations.",
+      description:
+        "Expert in MongoDB with Mongoose for creating robust APIs and performing efficient CRUD operations.",
       skills: ["MongoDB", "Mongoose", "Data Modeling", "Query Optimization"],
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
     },
     {
       title: "Full-Stack Integration",
       icon: Globe,
-      description: "End-to-end application development combining frontend excellence with robust backend solutions.",
+      description:
+        "End-to-end application development combining frontend excellence with robust backend solutions.",
       skills: ["MERN Stack", "API Integration", "Authentication", "Deployment"],
-      color: "from-orange-500 to-red-500"
-    }
+      color: "from-orange-500 to-red-500",
+    },
   ];
 
-  const filteredSkills = activeCategory === 'all' 
-    ? technicalSkills 
-    : technicalSkills.filter(skill => skill.category === activeCategory);
+  const filteredSkills =
+    activeCategory === "all"
+      ? technicalSkills
+      : technicalSkills.filter((skill) => skill.category === activeCategory);
 
   const getSkillLevelText = (level) => {
     if (level >= 90) return "Expert";
@@ -124,7 +137,10 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950">
+    <section
+      id="skills"
+      className="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950"
+    >
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -135,8 +151,9 @@ const Skills = () => {
             Technical Skills
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise in modern web development technologies, 
-            from frontend frameworks to backend architectures.
+            A comprehensive overview of my technical expertise in modern web
+            development technologies, from frontend frameworks to backend
+            architectures.
           </p>
         </div>
 
@@ -152,10 +169,12 @@ const Skills = () => {
                 className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 hover:scale-105"
                 style={{
                   animationDelay: `${index * 100}ms`,
-                  animation: `fadeInUp 0.6s ease-out forwards`
+                  animation: `fadeInUp 0.6s ease-out forwards`,
                 }}
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${competency.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <div
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-r ${competency.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                >
                   <competency.icon className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
@@ -199,8 +218,8 @@ const Skills = () => {
                   onClick={() => setActiveCategory(category.id)}
                   className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                     activeCategory === category.id
-                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg'
-                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                      ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
                 >
                   <category.icon className="w-4 h-4" />
@@ -222,7 +241,9 @@ const Skills = () => {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${skill.color} flex items-center justify-center`}>
+                      <div
+                        className={`w-12 h-12 rounded-xl bg-gradient-to-r ${skill.color} flex items-center justify-center`}
+                      >
                         <Code className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -237,14 +258,21 @@ const Skills = () => {
                     <div className="text-right">
                       <div className="flex items-center gap-1 mb-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star
+                          <motion.li
+                            className="list-none"
                             key={i}
-                            className={`w-4 h-4 ${
-                              i < Math.floor(skill.level / 20)
-                                ? 'text-yellow-400 fill-current'
-                                : 'text-gray-300 dark:text-gray-600'
-                            }`}
-                          />
+                            initial={{ scale: 1 }}
+                            whileHover={{ scale: 1.3 }}
+                            transition={{ type: "spring", stiffness: 500 }}
+                          >
+                            <Star
+                              className={`w-4 h-4 ${
+                                i < Math.floor(skill.level / 20)
+                                  ? "text-yellow-400 fill-current"
+                                  : "text-gray-300 dark:text-gray-600"
+                              }`}
+                            />
+                          </motion.li>
                         ))}
                       </div>
                     </div>
@@ -255,9 +283,12 @@ const Skills = () => {
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
                       <div
                         className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out relative`}
-                        style={{ 
-                          width: hoveredSkill === skill.name ? `${skill.level}%` : '0%',
-                          animationDelay: `${index * 100}ms`
+                        style={{
+                          width:
+                            hoveredSkill === skill.name
+                              ? `${skill.level}%`
+                              : "0%",
+                          animationDelay: `${index * 100}ms`,
                         }}
                       >
                         <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
@@ -283,24 +314,37 @@ const Skills = () => {
                 <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
                   {technicalSkills.length}+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  Technologies
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                  {Math.round(technicalSkills.reduce((acc, skill) => acc + skill.level, 0) / technicalSkills.length)}%
+                  {Math.round(
+                    technicalSkills.reduce(
+                      (acc, skill) => acc + skill.level,
+                      0
+                    ) / technicalSkills.length
+                  )}
+                  %
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Average Proficiency</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  Average Proficiency
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">
                   {coreCompetencies.length}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Core Areas</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  Core Areas
+                </div>
               </div>
             </div>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Continuously expanding my technical expertise through hands-on projects, 
-              professional certifications, and staying current with industry best practices.
+              Continuously expanding my technical expertise through hands-on
+              projects, professional certifications, and staying current with
+              industry best practices.
             </p>
           </div>
         </div>

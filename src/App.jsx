@@ -2,18 +2,18 @@ import About from './components/portfolio/About';
 import Skill from './components/portfolio/Skill';
 import Project from './components/portfolio/Project';
 import Footer from './components/layout/Footer';
-import Header from './components/layout/Header'
-import HeroSection from './components/HeroSection';
+import Header from './components/layout/Header';
 import Certificate from './components/portfolio/Certificate';
+import HomePage from './components/main/HomePage';
 
 const App = () => {
 
   return (
     <div className="min-h-screen font-sans dark:bg-black bg-white dark:text-white">
       <Header />
-      <main className="pt-20">
+      <main>
         {/* Hero section */}
-        <HeroSection />
+        <HomePage />
         {/* About Section */}
         <About />
         {/* Certificate section */}

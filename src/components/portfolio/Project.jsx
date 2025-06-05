@@ -19,8 +19,6 @@ const Project = () => {
       demoUrl:
         "https://shop-ease-git-main-mahadevs-projects-3f2fff3d.vercel.app",
       codeUrl: "https://github.com/Mahadev422/e-commerce.git",
-      category: "Full Stack",
-      featured: true,
     },
     {
       title: "Stone Paper Scissor",
@@ -30,8 +28,6 @@ const Project = () => {
       image: "/Portfolio/project/Stone-paper-scissor.png",
       demoUrl: "https://mahadev422.github.io/stone-paper-scissor/",
       codeUrl: "https://github.com/Mahadev422/stone-paper-scissor.git",
-      category: "Game Development",
-      featured: false,
     },
     {
       title: "3D Computer Setup",
@@ -41,8 +37,6 @@ const Project = () => {
       image: "/Portfolio/project/computer-set.png",
       demoUrl: "https://mahadev422.github.io/computer-set/",
       codeUrl: "https://github.com/Mahadev422/computer-set.git",
-      category: "3D Development",
-      featured: true,
     },
   ];
 
@@ -137,8 +131,7 @@ const Project = () => {
             <motion.div
               key={project.title}
               variants={cardVariants}
-              className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-cyan-400/30 transition-all duration-500 ${
-                project.featured ? 'lg:col-span-1 lg:row-span-1' : ''
+              className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-cyan-400/30 transition-all duration-500 
               }`}
             >
               {/* Featured badge */}
@@ -146,7 +139,7 @@ const Project = () => {
                 <motion.div
                   initial={{ scale: 0, rotate: -12 }}
                   animate={{ scale: 1, rotate: -12 }}
-                  transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
+                  transition={{ delay: 0.5 + index * 0.1, type: "spring"}}
                   className="absolute top-4 right-4 z-20 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
                 >
                   <Zap className="w-3 h-3 inline mr-1" />
@@ -170,11 +163,6 @@ const Project = () => {
                 
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Category badge */}
-                <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm text-cyan-400 text-xs font-medium px-3 py-1 rounded-full">
-                  {project.category}
-                </div>
 
                 {/* Quick action buttons on hover */}
                 <motion.div
