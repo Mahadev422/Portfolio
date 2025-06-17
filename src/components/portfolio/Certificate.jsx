@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Award, Eye, ChevronLeft, ChevronRight, X, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Certificate = () => {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -100,12 +101,14 @@ const Certificate = () => {
         {/* Certificate Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificates.map((cert, index) => (
-            <div
+            <motion.div
               key={index}
               className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-transparent hover:scale-[1.02]"
+              initial={{ opacity: 0, transform: 'translateY(30px)' }}
+              transition={{ delay: index * 0.1 }}
+              whileInView={{ opacity: 1, transform: 'translateY(0)' }}
               style={{
                 animationDelay: `${index * 100}ms`,
-                animation: `fadeInUp 0.6s ease-out forwards`
               }}
             >
               {/* Gradient Header */}
@@ -157,7 +160,7 @@ const Certificate = () => {
                   <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -242,19 +245,6 @@ const Certificate = () => {
           </div>
         )}
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };
