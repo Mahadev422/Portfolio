@@ -164,13 +164,12 @@ const Skills = () => {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreCompetencies.map((competency, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 hover:scale-105"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animation: `fadeInUp 0.6s ease-out forwards`,
-                }}
+                initial={{ opacity: 0, transform: 'translateY(30px)' }}
+                whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+                transition={{ delay: index * 0.1 }}
               >
                 <div
                   className={`w-12 h-12 rounded-xl bg-gradient-to-r ${competency.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
@@ -198,7 +197,7 @@ const Skills = () => {
                     </span>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -349,19 +348,6 @@ const Skills = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };

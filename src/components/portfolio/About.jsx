@@ -39,9 +39,6 @@ const About = () => {
                       className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-800"
                     />
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white dark:border-gray-800 flex items-center justify-center">
-                    <div className="w-3 h-3 bg-white rounded-full"></div>
-                  </div>
                 </div>
               </div>
 

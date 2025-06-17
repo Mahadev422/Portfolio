@@ -5,6 +5,8 @@ import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import Certificate from './components/portfolio/Certificate';
 import HomePage from './components/main/HomePage';
+import Bot from './components/bot/Bot';
+
 
 const App = () => {
 
@@ -22,6 +24,8 @@ const App = () => {
         <Skill />
         {/* Projects Section */}
         <Project />
+        {/* Chatbot Section */}
+        <Bot />
       </main>
       <Footer />
     </div>

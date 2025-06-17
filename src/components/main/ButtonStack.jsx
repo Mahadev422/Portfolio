@@ -21,17 +21,6 @@ const ButtonStack = () => {
       >
         <FiLinkedin className="h-6 w-6" />
       </motion.a>
-      <motion.a
-        href="https://mahadev422.github.io/new-resume/"
-        target="_blank"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.98 }}
-        className="p-4 border-2 font-semibold rounded-full transition-all duration-300 text-lg
-              dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-400 dark:hover:text-slate-900
-              border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-      >
-        <GoFileCode className="h-6 w-6" />
-      </motion.a>
     </motion.div>
   );
 };

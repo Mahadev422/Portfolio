@@ -131,8 +131,7 @@ const Project = () => {
             <motion.div
               key={project.title}
               variants={cardVariants}
-              className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-cyan-400/30 transition-all duration-500 
-              }`}
+              className='group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-cyan-400/30 transition-all duration-500 '
             >
               {/* Featured badge */}
               {project.featured && (

@@ -6,7 +6,6 @@ import DetailStack from "./DetailStack";
 import Typing from "./Typing";
 
 const HomePage = () => {
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden transition-all duration-700">
       {/* Background gradient */}
@@ -69,7 +68,7 @@ const HomePage = () => {
         <ButtonStack />
 
         {/* Tech stack indicators */}
-       <TechStack />
+        <TechStack />
       </div>
 
       {/* Scroll indicator */}
