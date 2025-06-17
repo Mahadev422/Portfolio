@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { User, MapPin, Mail, GraduationCap, Code, Award, Download, ExternalLink, Calendar, Building } from "lucide-react";
+import { User, MapPin, Mail, GraduationCap, Code, Award, Download, Calendar, Building } from "lucide-react";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('overview');

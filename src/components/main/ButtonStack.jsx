@@ -1,6 +1,5 @@
 import { FiLinkedin } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { GoFileCode } from "react-icons/go";
 
 const ButtonStack = () => {
   return (

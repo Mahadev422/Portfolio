@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
 import { CheckCircle, Send, Sparkles, ThumbsDown, ThumbsUp } from "lucide-react"
 import { useState } from "react";
+
+
 const Feedback = () => {
    const [feedback, setFeedback] = useState('');
     const [rating, setRating] = useState(null);
