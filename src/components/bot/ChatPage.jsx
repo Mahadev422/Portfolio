@@ -53,7 +53,6 @@ const App = () => {
     } finally {
       setLoading(false);
       scrollToBottom();
-      console.log(messages);
     }
   };
 

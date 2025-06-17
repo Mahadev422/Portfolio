@@ -12,12 +12,12 @@ const Bot = () => {
   return (
     <div className="relative z-50">
       {isChatVisible && (
-        <div className="fixed bottom-20 right-4 w-80 h-96 bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="fixed bottom-25 right-4 w-80 h-96 bg-white shadow-lg rounded-lg overflow-hidden">
           <ChatPage />
         </div>
       )}
       <button
-        className="fixed bottom-4 right-4 w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full cursor-pointer"
+        className="fixed bottom-10 right-10 w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full cursor-pointer"
         onClick={toggleChat}
       >
         {!isChatVisible ? "💬" : <X />}
