@@ -5,6 +5,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.remove-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 button:hover {
   cursor: pointer;
 }
