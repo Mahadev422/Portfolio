@@ -380,37 +380,5 @@ Error generating stack: `+r.message+`
  * Copyright 2025 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */const cU="gl-node/";class fU{constructor(e){var t;if(e.apiKey==null)throw new Error("An API Key must be set when running in a browser");if(e.project||e.location)throw new Error("Vertex AI project based authentication is not supported on browser runtimes. Please do not provide a project or location.");this.vertexai=(t=e.vertexai)!==null&&t!==void 0?t:!1,this.apiKey=e.apiKey;const o=cN(e,void 0,void 0);o&&(e.httpOptions?e.httpOptions.baseUrl=o:e.httpOptions={baseUrl:o}),this.apiVersion=e.apiVersion;const s=new uU(this.apiKey);this.apiClient=new M4({auth:s,apiVersion:this.apiVersion,apiKey:this.apiKey,vertexai:this.vertexai,httpOptions:e.httpOptions,userAgentExtra:cU+"web",uploader:new sU,downloader:new j3}),this.models=new H4(this.apiClient),this.live=new O4(this.apiClient,s,new rU),this.chats=new PR(this.models,this.apiClient),this.caches=new UR(this.apiClient),this.files=new JR(this.apiClient),this.operations=new e3(this.apiClient),this.authTokens=new R3(this.apiClient),this.tunings=new Q3(this.apiClient)}}const dU="AIzaSyDIvETrI3Yt-gwbU2RE-2LXr3ggJZbJrkk",hU=new fU({apiKey:dU});async function mU(i,e){return await hU.chats.create({model:"gemini-2.0-flash",history:[...e],config:{systemInstruction:`
-      
-      Virtual Assistant "Maya" of Jalandhar
-
-      You are Maya, a virtual personal assistant created exclusively to serve Jalandhar, your boss. You exist to support users with "My Boss Portfolio", a collection of information, activities, and achievements related to Jalandhar.
-
-      Core Identity:
-      - You are not a general-purpose assistant.
-      - Your sole duty is to support and provide information about Jalandhar.
-      - Jalandhar is your boss — you refer to him respectfully and represent him in all interactions.
-      - You have full access to all details about Jalandhar through the "Boss Portfolio" document (provided in PDF).
-      - You must not generate or include any programming code in your responses.
-
-      Response Behavior Guidelines:
-
-      🔐 Code Generation Restriction:
-      If a user requests any code, programming logic, or script, respond with:
-
-      "I do not have permission to generate code. I can only provide information related to your My Boss Portfolio."
-
-      🧾 Portfolio Guidance:
-      If a user asks for any information related to Jalandhar, provide it using the data available in the Boss Portfolio PDF. Ensure factual accuracy, proper context, and concise presentation.
-
-      💬 Job Description:
-      If anyone asks “What type of work you do?”, your answer must be:
-
-      "I am a virtual assistant designed to help you with My Boss Portfolio. I can provide information related to your My Boss Portfolio.Here is my boss resume link: https://drive.google.com/file/d/1gbTs54584yuym3FKapNf8OpUbaOTkyT5/view?usp=drivesdk, you can check it out for more details."
-
-      Tone and Professionalism:
-      - Remain polite, respectful, and professional at all times.
-      - Do not make up information if it's not present in the Boss Portfolio.
-      - If information is unavailable, respond with:
-        "I'm sorry, I couldn't find that information in the Boss Portfolio."
-
+      You are a helpful assistant and your name is Maya. Only generate text-based responses. Do not generate code, images, videos, or any other non-text content.
           `,maxOutputTokens:1e3,temperature:.7}}).sendMessageStream({message:i})}const pU=()=>{const i=Y.useRef(null),[e,t]=Y.useState([]),[o,s]=Y.useState(!1),l=Y.useRef(null),d=()=>{var g;(g=l.current)==null||g.scrollIntoView({behavior:"smooth"})},h=async()=>{const g=i.current.value;if(!g.trim())return;const p={role:"user",parts:[{text:g}]};t(v=>[...v,p]),i.current.value="",s(!0);try{const v=await mU(g,e);let T="";const C={role:"model",parts:[{text:""}]};t(E=>[...E,C]);for await(const E of v){const M=E.text;T+=M,t(N=>{const D=[...N];return D[D.length-1]={role:"model",parts:[{text:T}]},D})}}catch(v){console.error("Streaming error:",v),t(T=>[...T,{role:"system",parts:[{text:"⚠️ Failed to fetch AI response."}]}])}finally{s(!1),d()}};return S.jsxs("div",{className:"flex flex-col h-full w-full bg-white dark:bg-gray-900 rounded-lg shadow-lg",children:[S.jsx("header",{className:"p-2 text-center bg-blue-500 dark:bg-gray-800 text-white text-lg font-semibold rounded-t-lg",children:"Chat Bot"}),S.jsxs("div",{className:"flex-1 overflow-y-auto p-4 remove-scrollbar",children:[e.map((g,p)=>S.jsxs("div",{className:`flex items-start mb-3 ${g.role==="user"?"justify-end":"justify-start"}`,children:[g.role!=="user"&&S.jsx("div",{className:"mr-2",children:S.jsx("div",{className:"w-8 h-8 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center",children:"🤖"})}),S.jsx("div",{className:`p-3 rounded-lg max-w-[75%] whitespace-pre-wrap text-sm shadow ${g.role==="user"?"bg-blue-500 text-white":"bg-gray-200 dark:bg-gray-700 text-black dark:text-white"}`,children:S.jsx("p",{children:g.parts.map(v=>v.text).join("")})}),g.role==="user"&&S.jsx("div",{className:"ml-2",children:S.jsx("div",{className:"w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center",children:"🙋"})})]},p)),S.jsx("div",{ref:l})]}),S.jsxs("footer",{className:"flex items-center gap-2 p-3 bg-gray-100 dark:bg-gray-800",children:[S.jsx("textarea",{ref:i,className:"flex-1 px-3 py-2 rounded-lg border dark:border-gray-600 focus:outline-none bg-gray-50 dark:bg-gray-700 dark:text-white resize-none",placeholder:"Type your message...",disabled:o}),S.jsx("button",{onClick:h,className:"bg-blue-500 hover:bg-blue-600 p-3 rounded-lg text-white flex items-center justify-center disabled:opacity-50",disabled:o,children:S.jsx(ew,{size:20})})]})]})},gU=()=>{const[i,e]=Y.useState(!1),t=()=>{e(!i)};return S.jsxs("div",{className:"relative z-50",children:[i&&S.jsx("div",{className:"fixed bottom-25 right-4 w-80 h-96 bg-white shadow-lg rounded-lg overflow-hidden",children:S.jsx(pU,{})}),S.jsx("button",{className:"fixed bottom-10 right-10 w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full cursor-pointer",onClick:t,children:i?S.jsx(hx,{}):"💬"})]})},yU=()=>S.jsxs(S.Fragment,{children:[S.jsx(ww,{}),S.jsx(gU,{})]});x_.createRoot(document.getElementById("root")).render(S.jsx(Y.StrictMode,{children:S.jsx(yU,{})}));
