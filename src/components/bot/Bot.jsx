@@ -17,7 +17,8 @@ const Bot = () => {
         </div>
       )}
       <button
-        className="fixed bottom-10 right-10 w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full cursor-pointer"
+        className={`fixed bottom-10 right-10 w-12 h-12 flex items-center justify-center rounded-full cursor-pointer
+          ${isChatVisible ? "bg-red-500" : "bg-blue-500"} text-white`}
         onClick={toggleChat}
       >
         {!isChatVisible ? "💬" : <X />}
