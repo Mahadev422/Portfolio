@@ -32,11 +32,6 @@ Welcome to my personal portfolio website — a showcase of my journey, skills, p
 
 [👉 View Portfolio Live](https://mahadev422.github.io/Portfolio/)
 
-## 🖼️ Screenshots
-
-| 3D Section |
-| ![3D](./public/project/computer-set.png) |
-
 ## 🛠️ Setup Instructions
 
 ```bash
