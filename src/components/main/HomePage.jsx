@@ -61,7 +61,7 @@ const HomePage = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mt-15 mx-auto px-6 text-center">
+      <div className="relative z-10 w-full mt-15 mx-auto px-6 text-center">
         <Typing />
         <DetailStack />
 

@@ -8,7 +8,7 @@ const DetailStack = () => {
       className="mb-12"
     >
       <p
-        className={`text-xl sm:text-2xl leading-relaxed max-w-4xl mx-auto font-light transition-colors duration-700 dark:text-slate-300 text-slate-600
+        className={`text-2xl font-light transition-colors duration-700 dark:text-slate-300 text-slate-600
           `}
       >
         Crafting exceptional digital experiences through innovative web
