@@ -38,6 +38,15 @@ const Project = () => {
       demoUrl: "https://mahadev422.github.io/computer-set/",
       codeUrl: "https://github.com/Mahadev422/computer-set.git",
     },
+    {
+      title: "Weather App",
+      description:
+        "Real-time weather application providing current conditions, forecasts, and location-based data with a sleek UI.",
+      tech: ["React.js", "React-Icons", "Tailwindcss"],
+      image: "/Portfolio/project/weather-app.png",
+      demoUrl: "https://mahadev422.github.io/Weather-App/",
+      codeUrl: "https://github.com/Mahadev422/Weather-App.git",
+    },
   ];
 
   const containerVariants = {
