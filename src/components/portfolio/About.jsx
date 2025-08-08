@@ -74,7 +74,7 @@ const About = () => {
 
               {/* Action Buttons */}
               <div className="space-y-3">
-                <a href="https://mahadev422.github.io/new-resume/" className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2" target="_blank">
+                <a href="https://drive.google.com/file/d/1wVEwsqdY4WcMjJ3wwTAf9gKX8fukLegO/view?usp=drivesdk" className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2" target="_blank">
                   <Download className="w-4 h-4" />
                   Download Resume
                 </a>
