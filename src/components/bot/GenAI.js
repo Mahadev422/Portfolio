@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-const genAI = new GoogleGenAI({ apiKey: "AIzaSyCybUYNUIeRt0VbZx3UNS9KXfCdxgpPJR8" });
+const genAI = new GoogleGenAI({ apiKey: "AIzaSyA5s7vxCE6jbSwcC7_hUS6AtE8PROSDSy4" });
 
 async function GenAI(input, messages) {
   const chat = genAI.chats.create({
