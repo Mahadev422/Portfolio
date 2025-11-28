@@ -4,7 +4,9 @@
 body::-webkit-scrollbar {
   display: none;
 }
-
+body {
+  scroll-behavior: smooth;
+}
 .remove-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
