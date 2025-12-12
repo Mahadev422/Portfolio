@@ -36,7 +36,7 @@ Welcome to my personal portfolio website — a showcase of my journey, skills, p
 
 ```bash
 # Clone this repo
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/Mahadev 422/portfolio.git
 cd portfolio
 
 # Install dependencies
